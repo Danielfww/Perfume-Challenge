@@ -1,99 +1,86 @@
 * {
-  margin:0 auto;
+  margin:auto 0;
   padding:0 auto;
+  box-sizing:border-box;
+  /*allows us to include the padding and border in an element's total width and height - Giant pain in the ass to remember all of this*/
 }
+
+
+
 
 
 
 body {
   background-color:hsl(30, 38%, 92%);
-
-  
+  font-size:14px;
+  display:flex;   /*makes box movable around the                       body*/
+  justify-content:center;
+    margin-left:auto;
+  margin-right:auto;
+  align-items:center;   /*centers the item to center*/
+  min-height:100vh; /* viewport height - centers the item to the center of the page*/
+   
 }
 
-.parent {
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%);
-  position:absolute;
-  display:inline;
-  background:white;
-  border-radius:10px;
-  width:597px;
-  height:444px;
+.container { /*When you have specified a width on the object that you have applied margin: 0 auto to, the object will sit centrally within it's parent container.
+
+Specifying auto as the second parameter basically tells the browser to automatically determine the left and right margins itself, which it does by setting them equally. does the same with padding, that way it makes both elements equal - another pain */
+  background:white; 
   overflow:hidden;
- 
- 
   
 }
-
-.child {
-  background:hsl(0, 0%, 100%);
-  display:inline;
-  width:50%;
-  height:100%;
-}
-
-.child2 {
-  background-color: hsl (0, 0%, 100%);
+.grid {
+  max-width: 650px;
   display:grid;
-  width:237px;
-  height:380px;
-  float:right;
-  padding:30px 30px;
-  overflow:contain;
-  align-items:column;
-  vertical-align:left;
- 
- 
+  grid-template-columns:1fr 1fr;
+  border:1px solid black;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+
+.child2{
+  padding:30px 30px 30px 30px;
+  font-size:14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  overflow:hidden;
+  
 
   
   
   
   
 }
-
 
 
 img { /*Image for the left size of the box*/
   max-width:100%;
-  max-height:100%;
-
+  display:grid;
+  overflow:hidden;
 }
 
-// <uniquifier>: Use a unique and descriptive class name
+  
 
-.fraunces-<uniquifier> {
-  font-family: "Fraunces", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-variation-settings:
-    "SOFT" 0,
-    "WONK" 0;
-}
 
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 900
-
-.montserrat-<uniquifier> {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
 
 .perfume { /*Perfume top text */
   font-family:"Montserrat";
   letter-spacing:.25em;
   color: hsl(228, 12%, 48%);
   width:100%;
-  
+  font-size:14px;
+  line-height:3em;
 }
 
 h1 { /*Gabrielle h1 goes to Parfum*/
-  font-family:fraunces;
+  font-family:"Fraunces" !important;
   text-align:left;
+  font-style:bold;
+  width:100%;
+  font-size:40px;
+  line-height:40px;  
 }
 
 .floral { /*A floral paragraph text, goes all the way to CHANEL*/
@@ -120,8 +107,9 @@ h1 { /*Gabrielle h1 goes to Parfum*/
   align-items:center;
   position:relative;
   top:-7px;
+  padding-right:20px;
   
-}
+}  
 
 .prices p {
   margin-right:40px;
@@ -137,59 +125,83 @@ h1 { /*Gabrielle h1 goes to Parfum*/
 .child3 { /*Green box for Add to Cart*/
   width: 95%;
   height: 50px;
-  background-color:white;
   border-radius: 0.35rem;
-  background-color: hsl(158, 36%, 37%);
+  background: hsl(158, 36%, 37%);
   display:inline-flex;
   align-items:center;
+  justify-content:center;
+  border:1px white solid;
+}
+  
+  
+ 
 
   
   
 
 .add { /*add to cart text*/
   color:white;
-  font-family:"Fraunces", serif;
-  font-size:16px;
+  font-family:"Fraunces", sans-serif;
+  font-size:15px;
+  font-weight:none;
   text-decoration:none;
+
  
 
   }
   
   
- 
-  
-  
   .cart {         /*image for the cart logo*/
-    width:17px;
-    height:17px;
-    display:inline-flex;
-    float:center;
-    margin-right:-45px;
-    overflow:hidden;
+   max-width:17px;
+   max-height:17px;
+   display:flex;
+   flex-direction:center;
+   justify-content:center;
+   align-items:center;
+   margin-right:10px;
   }
   
+.footer{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-size:16px;
+  font-family:"Fraunces" !important;
+  color: purple;
   
- 
-  @media only screen and (max-width:740px){
-    .parent {
-      display:block;
-      width:100%;
-      float:none;
-      position:sticky;
+}
+
+
+  @media only screen and (max-width: 620px)
+  {
+    .container{
+        margin:0 15px;
+        padding: 15px 0;
     }
     
+    .grid{
+        grid-template-columns: 1fr;
+    }
+    
+    img {
+        max-height:330px;
+        width: 100%;
+        object-fit:cover;
+     
+    }
     .child {
-      display:flex;
-      width:50%;
-      height:50%;
+      display:block;
     }
-    .child2{
-      display:inline;
-      width:80%;
-      height:50%;
-    }
-    .img {
-      height:50%;
-      position:sticky;
-    }
-  }
+    
+    .prices, .cart, .add, .child3, .prices p, .color, h1: {
+      padding:23px;
+      object-fit:contain;
+      font-size:14px !important;
+      padding-bottom:20px;
+}
+
+
+
+
