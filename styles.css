@@ -30,8 +30,7 @@ Specifying auto as the second parameter basically tells the browser to automatic
 .grid {
   max-width: 650px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  border:1px solid black;
+  grid-template-columns:1fr 1fr
   border-radius:15px;
   overflow:hidden;
 }
