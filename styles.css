@@ -11,12 +11,11 @@
 
 
 body {
-  background-color:hsl(30, 38%, 92%);
+  background:hsl(30, 38%, 92%);
   font-size:14px;
-  display:flex;   /*makes box movable around the                       body*/
-  justify-content:center;
-    margin-left:auto;
+  display:flex;   /*makes box movable around the  body*/   margin-left:auto;
   margin-right:auto;
+  justify-content:center;
   align-items:center;   /*centers the item to center*/
   min-height:100vh; /* viewport height - centers the item to the center of the page*/
    
@@ -24,8 +23,7 @@ body {
 
 .container { /*When you have specified a width on the object that you have applied margin: 0 auto to, the object will sit centrally within it's parent container.
 
-Specifying auto as the second parameter basically tells the browser to automatically determine the left and right margins itself, which it does by setting them equally. does the same with padding, that way it makes both elements equal - another pain */
-  background:white; 
+Specifying auto as the second parameter basically tells the browser to automatically determine the left and right margins itself, which it does by setting them equally. does the same with padding, that way it makes both elements equal - another pain */ 
   overflow:hidden;
   
 }
@@ -42,10 +40,13 @@ Specifying auto as the second parameter basically tells the browser to automatic
 .child2{
   padding:30px 30px 30px 30px;
   font-size:14px;
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid-direction:column;
   justify-content:space-between;
   overflow:hidden;
+  background:white;
+  height:485px;
+  object-fit:contain;
   
 
   
@@ -57,8 +58,9 @@ Specifying auto as the second parameter basically tells the browser to automatic
 
 img { /*Image for the left size of the box*/
   max-width:100%;
-  display:grid;
+  object-fit:contain;
   overflow:hidden;
+  display:grid;
 }
 
   
@@ -103,7 +105,6 @@ h1 { /*Gabrielle h1 goes to Parfum*/
   font-size:30px;
   font-family:Fraunces;
   float:left;
-  position:absolute;
   align-items:center;
   position:relative;
   top:-7px;
@@ -174,8 +175,7 @@ h1 { /*Gabrielle h1 goes to Parfum*/
 }
 
 
-  @media only screen and (max-width: 620px)
-  {
+  @media only screen and (max-width: 620px) {
     .container{
         margin:0 15px;
         padding: 15px 0;
@@ -186,7 +186,7 @@ h1 { /*Gabrielle h1 goes to Parfum*/
     }
     
     img {
-        max-height:330px;
+        max-height:350px;
         width: 100%;
         object-fit:cover;
      
@@ -200,6 +200,7 @@ h1 { /*Gabrielle h1 goes to Parfum*/
       object-fit:contain;
       font-size:14px !important;
       padding-bottom:20px;
+}
 }
 
 
